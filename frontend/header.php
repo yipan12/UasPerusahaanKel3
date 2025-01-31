@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Example</title>
+    <title>CoreTech Solution</title>
 
     <!-- DataTables CSS (latest version) -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
@@ -20,10 +20,14 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
        .navbar a:hover {
             color:rgb(255, 255, 255);
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(245, 246, 247, 0.6);
         }
 
         
@@ -37,18 +41,22 @@
 
 <body>
 
-    <nav class="navbar navbar-dark sticky-top" style="background-color: #EFEFEF;">
+    <nav class="navbar navbar-dark sticky-top " style="background-color: #101820; height: 70px;">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand text-dark fw-bold" href="#">IrpanMaulana</a>
-            <div class="d-flex justify-content-between w-25">
-
-                <a href="landingPage.php" class=" text-black-50 fw-bold ">Dashboard</a>
-                <a href="tambahInformasi.php" class="text-black-50 fw-bold ">Tambah</a>
-                <a href="kelolaPage.php" class="text-black-50 fw-bold ">Kelola</a>
+            <!-- halaman -->
+           <div class=" d-flex justify-content-between align-items-center" style="width: 35%;">
+           <a class="navbar-brand text-white fw-bold" href="#">CoreTech Solution</a>
+            <a href="landingPage.php" class=" text-decoration-none text-white fw-bold ">Dashboard</a>
+                <a href="tambahInformasi.php" class=" text-decoration-none text-white fw-bold ">Tambah</a>
+                <a href="kelolaPage.php" class=" text-decoration-none text-white fw-bold ">Kelola</a>
+           </div>
                 
-                <button class="btn btn-outline-dark" id="logoutButton" data-bs-toggle="modal" data-bs-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </button>
+            
+            <div class="d-flex justify-content-evenly align-items-center w-25">
+            <a href=""><i class="fas fa-user text-white"> </i></a>
+                <a class="text-white text-decoration-none" id="logoutButton" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt"> </i> 
+                </a>
             </div>
         </div>
     </nav>
@@ -83,3 +91,39 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
         }
     </style>
+
+<script>
+        // Logout functionality
+        document.getElementById('confirmLogoutButton').addEventListener('click', function () {
+            const sessionToken = localStorage.getItem('session_token');
+            const formData = new FormData();
+            formData.append('session_token', sessionToken);
+
+            axios.post('http://localhost/Kelompok3/backend/logout.php', formData)
+                .then(response => {
+                    if (response.data.status === 'success') {
+                        localStorage.removeItem('session_token');
+                        localStorage.removeItem('name');
+                        window.location.href = 'login.php'; // Redirect to login after logout
+                    } else {
+                        alert('Logout failed: ' + response.data.message);
+                    }
+                })
+                .catch(() => {
+                    alert('Error connecting to the server');
+                });
+        });
+
+     
+
+        // Manually triggering modal for other buttons
+        document.querySelectorAll('.btn-outline-secondary, .btn-outline-success, .btn-outline-info').forEach(button => {
+            button.addEventListener('click', function () {
+                const modal = new bootstrap.Modal(document.getElementById('logoutModal'));
+                modal.show();
+            });
+        });
+    </script>
+</body>
+
+</html>

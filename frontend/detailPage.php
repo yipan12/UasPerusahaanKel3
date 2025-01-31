@@ -23,6 +23,7 @@ try {
 <head>
     <title><?php echo htmlspecialchars($news['title']); ?></title>
     <link href="../bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div class="container-fluid mt-5">
@@ -30,11 +31,17 @@ try {
             <div class="col-md-8 offset-md-2">
                 <h1 class="mb-4"><?php echo htmlspecialchars($news['title']); ?></h1>
                 
-                <?php if (!empty($news['img'])): ?>
-                    <img src="http://localhost/kelompok3/backend/<?php echo htmlspecialchars($news['img']); ?>" 
-                         class="img-fluid rounded mb-4" 
-                         alt="Gambar Berita">
-                <?php endif; ?>
+                <?php 
+if (!empty($news['img'])) {
+    $imagePath = "http://localhost/Kelompok3/backend/" . $news['img'];
+    
+    
+?>
+    <img src="<?php echo $imagePath; ?>" 
+         class="img-fluid rounded mb-4" 
+         alt="Gambar Berita">
+<?php } ?>
+
                 
                 <div class="mb-3">
                     <strong>Tanggal:</strong> <?php echo htmlspecialchars($news['date']); ?>
