@@ -39,9 +39,28 @@
         <p class="mb-0">Sudah punya akun? <a href="login.php" class="text-primary">Login di sini</a></p>
     </div>
 
-    <div class="text-center mt-4 text-muted">
-        <p>&copy; CoreTech Solution</p>
-    </div>
+    <hr class="my-4">
+                
+                <div class="text-center">
+                    <small class="text-muted">
+                        <p class="mb-2">© 2025 Kelompok 3</p>
+                        <div>
+                            <div class="mt-2">
+                                <small>
+                                    Irpan Maulana - 22552011284<br>
+                                    M Daffa Haikal Iskandar - 22552011202<br>
+                                    Arya Wardana - 2255201330 <br>
+                                    Nuramar - 22552011291<br>
+                                    
+                                    Hermawan Sopian
+                                    <br>
+                                    Kelas_222w_UASWEB1
+                                </small>
+                            </div>
+                        </div>
+                    </small>
+                </div>
+            </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

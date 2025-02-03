@@ -8,10 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-gradient: linear-gradient(45deg,rgb(66, 54, 25) 0%,rgb(84, 87, 12) 100%);
-            --secondary-color: #ff6b6b;
-        }
+        
         body {
             background: #f0f2f5;
             font-family: 'Inter', sans-serif;
@@ -56,7 +53,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="news-form-container">
-                    <div class="form-header">
+                    <div class="form-header bg-dark">
                         <h2 class="mb-0">
                             Tambah Informasi
                         </h2>
@@ -80,11 +77,32 @@
                                 <input type="file" class="form-control" id="image" name="image" required>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-submit text-white w-100 py-3" onclick="addNews()">
+                                <button type="button" class="btn btn-submit bg-dark text-white w-100 py-3" onclick="addNews()">
                                     Kirim Berita
                                 </button>
                             </div>
                         </form>
+                        <hr class="my-4">
+                
+                <div class="text-center">
+                    <small class="text-muted">
+                        <p class="mb-2">© 2024 Kelompok 3</p>
+                        <div>
+                            <div class="mt-2">
+                                <small>
+                                    Irpan Maulana - 22552011284<br>
+                                    M Daffa Haikal Iskandar - 22552011202<br>
+                                    Arya Wardana - 2255201330
+                                    <br>
+                                    Nuramar - 22552011291<br>
+                                    Hermawan Sopian
+                                    <br>
+                                    Kelas_222w_UASWEB1
+                                </small>
+                            </div>
+                        </div>
+                    </small>
+                </div>
                     </div>
                 </div>
             </div>

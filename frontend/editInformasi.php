@@ -12,7 +12,7 @@ include("../frontend/header.php");
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(45deg,rgb(66, 54, 25) 0%,rgb(84, 87, 12) 100%);
+            --primary-gradient: linear-gradient(45deg,rgb(0, 0, 0) 0%,rgb(49, 49, 49) 100%);
         }
         body {
             background: #f0f2f5;
@@ -85,6 +85,27 @@ include("../frontend/header.php");
                                 </button>
                             </div>
                         </form>
+                        <hr class="my-4">
+                
+                <div class="text-center">
+                    <small class="text-muted">
+                        <p class="mb-2">© 2025 Kelompok 3</p>
+                        <div>
+                            <div class="mt-2">
+                                <small>
+                                    Irpan Maulana - 22552011284<br>
+                                    M Daffa Haikal Iskandar - 22552011202<br>
+                                    Arya Wardana - 2255201330
+                                    <br>
+                                    Nuramar - 22552011291<br>
+                                    Hermawan Sopian
+                                    <br>
+                                    Kelas_222w_UASWEB1
+                                </small>
+                            </div>
+                        </div>
+                    </small>
+                </div>
                     </div>
                 </div>
             </div>

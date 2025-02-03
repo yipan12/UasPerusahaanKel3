@@ -7,33 +7,52 @@
     <title>Halaman Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
-
-<div class="card shadow p-4" style="width: 350px;">
-    <h2 class="text-center mb-4">Login</h2>
-
-    <form id="loginForm">
-        <div class="mb-3">
-            <label for="user" class="form-label">Username*</label>
-            <input type="text" id="user" name="user" class="form-control" placeholder="Masukkan Username" required>
+<body >
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+            <div class="card shadow p-4" style="width: 350px;">
+                <h2 class="text-center mb-4">Login</h2>
+                
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Username*</label>
+                        <input type="text" id="user" name="user" class="form-control" placeholder="Masukkan Username" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Password*</label>
+                        <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Masukkan Password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <p class="mb-0">Belum punya akun? <a href="registrasi.php" class="text-primary">Registrasi di sini</a></p>
+                </div>
+                
+                <hr class="my-4">
+                
+                <div class="text-center">
+                    <small class="text-muted">
+                        <p class="mb-2">© 2025 Kelompok 3</p>
+                        <div>
+                            <div class="mt-2">
+                                <small>
+                                    Irpan Maulana - 22552011284<br>
+                                    M Daffa Haikal Iskandar - 22552011202<br>
+                                    Arya Wardana - 2255201330
+                                    <br>
+                                    Nuramar - 22552011291<br>
+                                    Hermawan Sopian
+                                    <br>
+                                    Kelas_222w_UASWEB1
+                                </small>
+                            </div>
+                        </div>
+                    </small>
+                </div>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Password*</label>
-            <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Masukkan Password" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100">Login</button>
-    </form>
-
-    <div class="text-center mt-3">
-        <p class="mb-0">Belum punya akun? <a href="registrasi.php" class="text-primary">Registrasi di sini</a></p>
-    </div>
-
-    <div class="text-center mt-4 text-muted">
-        <p>&copy; CoreTech Solution</p>
-    </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -58,16 +77,16 @@
         formData.append('pwd', password);
 
         axios.post('http://localhost/Kelompok3/backend/login.php', formData)
-            .then(response => {
-                if (response.data.status === 'success') {
-                    const sessionToken = response.data.session_token;
-                    localStorage.setItem('session_token', sessionToken);
-                    localStorage.setItem('username', username);
-                    window.location.href = 'index.php';
-                } else {
-                    throw new Error(response.data.message || 'Login failed');
-                }
-            })
+    .then(response => {
+        if (response.data.status === 'success') {
+            const sessionToken = response.data.session_token;
+            localStorage.setItem('session_token', sessionToken);
+            localStorage.setItem('username', username);
+            window.location.href = 'index.php';
+        } else {
+            throw new Error(response.data.message || 'Login failed');
+        }
+    })
             .catch(error => {
                 console.error(error);
                 const alert = document.createElement('div');

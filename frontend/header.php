@@ -45,15 +45,15 @@
         <div class="container d-flex justify-content-between align-items-center">
             <!-- halaman -->
            <div class=" d-flex justify-content-between align-items-center" style="width: 35%;">
-           <a class="navbar-brand text-white fw-bold" href="#">CoreTech Solution</a>
+           <a class="navbar-brand text-white fw-bold" href="./landingPage.php">CoreTech Solution</a>
             <a href="landingPage.php" class=" text-decoration-none text-white fw-bold ">Dashboard</a>
                 <a href="tambahInformasi.php" class=" text-decoration-none text-white fw-bold ">Tambah</a>
                 <a href="kelolaPage.php" class=" text-decoration-none text-white fw-bold ">Kelola</a>
            </div>
                 
             
-            <div class="d-flex justify-content-evenly align-items-center w-25">
-            <a href=""><i class="fas fa-user text-white"> </i></a>
+            <div class="d-flex justify-content-evenly align-items-center" style="width: 150px;">
+            <a href="profile.php"><i class="fas fa-user text-white"> </i></a>
                 <a class="text-white text-decoration-none" id="logoutButton" data-bs-toggle="modal" data-bs-target="#logoutModal">
                     <i class="fas fa-sign-out-alt"> </i> 
                 </a>
